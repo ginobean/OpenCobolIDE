@@ -8,7 +8,7 @@ from pyqode.core.backend.workers import findall
 
 
 class OccurrencesHighlighterMode(Mode):
-    """ Highlights occurrences of the word under the text text cursor.
+    """ Highlights occurrences of the word under the text cursor.
 
     The ``delay`` before searching for occurrences is configurable.
     """
@@ -107,7 +107,7 @@ class OccurrencesHighlighterMode(Mode):
         self._sub = None
         self._background = QtGui.QColor('#CCFFCC')
         self._foreground = None
-        self._underlined = False
+        self._underlined = True
         self._case_sensitive = False
 
     def on_state_changed(self, state):
