@@ -6,6 +6,7 @@ import subprocess
 import functools
 import os
 import platform
+import distro
 import shlex
 import sys
 
@@ -16,7 +17,8 @@ windows = platform.system() == 'Windows'
 darwin = platform.system() == 'Darwin'
 linux = platform.system() == 'Linux'
 if linux:
-    ubuntu = platform.linux_distribution()[0].lower() == 'ubuntu'
+    ubuntu = distro.like().lower() == 'ubuntu'
+#    ubuntu = platform.linux_distribution()[0].lower() == 'ubuntu'
 else:
     ubuntu = False
 
