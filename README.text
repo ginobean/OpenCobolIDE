@@ -1,0 +1,15 @@
+
+HOW TO INSTALL OpenCobolIDE, from the source (locally checked out git repo):
+
+On Ubuntu linux, change ownership of
+   /usr/share/applications
+   /usr/share/pixmaps
+
+to be owned by normal user.
+e.g.
+  sudo chown -R gino:gino /usr/share/applications /usr/share/pixmaps
+
+As normal user:
+python3 setup.py install
+
+name of runtime executable is: opencobolide
