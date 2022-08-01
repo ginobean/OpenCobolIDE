@@ -213,7 +213,7 @@ class OutputWindow(CodeEdit):
         :return: A ColorScheme instance.
         """
         if background is None:
-            background = qApp.palette().base().color()
+            background = QColor('transparent')
         if foreground is None:
             foreground = qApp.palette().text().color()
         is_light = background.lightness() >= 128
