@@ -215,7 +215,7 @@ class OutputWindow(CodeEdit):
         if background is None:
             background = QColor('transparent')
         if foreground is None:
-            foreground = qApp.palette().text().color()
+            foreground = QColor('yellow')
         is_light = background.lightness() >= 128
         if error is None:
             if is_light:
