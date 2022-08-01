@@ -150,6 +150,7 @@ class Ui_MainWindow(object):
         self.tabWidgetEditors = TabWidget(self.page_2)
         self.tabWidgetEditors.setOrientation(QtCore.Qt.Horizontal)
         self.tabWidgetEditors.setObjectName("tabWidgetEditors")
+        self.tabWidgetEditors.setStyleSheet("QTabBar::tab:selected{ background: blue }")
         self.gridLayout_2.addWidget(self.tabWidgetEditors, 0, 0, 1, 1)
         self.stackedWidget.addWidget(self.page_2)
         self.gridLayout.addWidget(self.stackedWidget, 0, 0, 1, 1)
