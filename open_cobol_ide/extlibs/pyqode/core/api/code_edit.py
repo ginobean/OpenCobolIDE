@@ -1191,12 +1191,12 @@ class CodeEdit(QtWidgets.QPlainTextEdit):
         self.action_duplicate_line = action
 
         # select all
-        # action = QtWidgets.QAction(_('Select all'), self)
+        action = QtWidgets.QAction(_('Select all'), self)
         # action.setShortcut(QtGui.QKeySequence.SelectAll)
-        # action.triggered.connect(self.selectAll)
-        # self.action_select_all = action
-        # self.add_action(self.action_select_all, sub_menu=None)
-        # self.add_separator(sub_menu=None)
+        action.triggered.connect(self.selectAll)
+        self.action_select_all = action
+        self.add_action(self.action_select_all, sub_menu=None)
+        self.add_separator(sub_menu=None)
 
         if create_standard_actions:
             # indent
