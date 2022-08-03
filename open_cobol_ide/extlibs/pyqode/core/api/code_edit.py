@@ -950,6 +950,25 @@ class CodeEdit(QtWidgets.QPlainTextEdit):
                 self._do_home_key()
                 event.accept()
 
+            # redefine ctrl-p to go to previous line
+            elif (event.key() == QtCore.Qt.Key_P) and \
+                 (event.modifiers() & QtCore.Qt.ControlModifier):
+                event = QtGui.QKeyEvent(QtCore.QEvent.KeyPress,
+                                        QtCore.Qt.Key_Up,
+                                        QtCore.Qt.NoModifier)
+                event.setAccepted(False)
+                super(CodeEdit, self).keyPressEvent(event)
+
+            # redefine ctrl-n to go to next line
+            elif (event.key() == QtCore.Qt.Key_N) and \
+                 (event.modifiers() & QtCore.Qt.ControlModifier):
+                event = QtGui.QKeyEvent(QtCore.QEvent.KeyPress,
+                                        QtCore.Qt.Key_Down,
+                                        QtCore.Qt.NoModifier)
+                event.setAccepted(False)
+                super(CodeEdit, self).keyPressEvent(event)
+
+
             elif event.key() == QtCore.Qt.Key_Home and \
                     int(event.modifiers()) & QtCore.Qt.ControlModifier == 0:
                 self._do_home_key(
