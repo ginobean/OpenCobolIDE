@@ -52,10 +52,10 @@ class ExtendedSelectionMode(Mode):
         self.action_select_extended_word.setShortcutContext(
             QtCore.Qt.WidgetShortcut)
 
-        self.matched_sel_shortcut = QtGui.QKeySequence('Ctrl+E')
+        # self.matched_sel_shortcut = QtGui.QKeySequence('Ctrl+E')
         self.action_select_matched = QtWidgets.QAction(self.editor)
         self.action_select_matched.setText(_('Matched select'))
-        self.action_select_matched.setShortcut(self.matched_sel_shortcut)
+#        self.action_select_matched.setShortcut(self.matched_sel_shortcut)
         self.action_select_matched.triggered.connect(
             self.perform_matched_selection)
         self.action_select_matched.setShortcutContext(
