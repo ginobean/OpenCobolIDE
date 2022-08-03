@@ -1230,7 +1230,6 @@ class CodeEdit(QtWidgets.QPlainTextEdit):
             self.action_paste = action
         # duplicate line
         action = QtWidgets.QAction(_('Duplicate line'), self)
-        action.setShortcut('Ctrl+D')
         action.triggered.connect(self.duplicate_line)
         self.add_action(action, sub_menu=None)
         self.action_duplicate_line = action
