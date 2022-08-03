@@ -547,7 +547,7 @@ class Ui_MainWindow(object):
         self.actionNew.setText(_translate("MainWindow", "&New"))
         self.actionNew.setToolTip(_translate("MainWindow", "New file"))
         self.actionNew.setStatusTip(_translate("MainWindow", "Create a new file"))
-        self.actionNew.setShortcut(_translate("MainWindow", "Ctrl+N"))
+        # self.actionNew.setShortcut(_translate("MainWindow", "Ctrl+N"))
         self.actionOpen.setText(_translate("MainWindow", "&Open"))
         self.actionOpen.setToolTip(_translate("MainWindow", "Open a file"))
         self.actionOpen.setStatusTip(_translate("MainWindow", "Open a file"))
