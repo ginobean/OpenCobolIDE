@@ -965,9 +965,17 @@ class CodeEdit(QtWidgets.QPlainTextEdit):
                 event = QtGui.QKeyEvent(QtCore.QEvent.KeyPress,
                                         QtCore.Qt.Key_Down,
                                         QtCore.Qt.NoModifier)
-                event.setAccepted(False)
                 super(CodeEdit, self).keyPressEvent(event)
 
+            # redefine ctrl-k to kill to end of line, but in a way
+            # that saves the killed portion the copy buffer.
+            elif (event.key() == QtCore.Qt.Key_K) and \
+                 (event.modifiers() & QtCore.Qt.ControlModifier):
+                event = QtGui.QKeyEvent(QtCore.QEvent.KeyPress,
+                                        QtCore.Qt.Key_End,
+                                        QtCore.Qt.ShiftModifier)
+                super(CodeEdit, self).keyPressEvent(event)
+                self.cut()
 
             elif event.key() == QtCore.Qt.Key_Home and \
                     int(event.modifiers()) & QtCore.Qt.ControlModifier == 0:
