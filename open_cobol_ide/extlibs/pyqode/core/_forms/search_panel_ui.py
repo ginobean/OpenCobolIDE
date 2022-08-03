@@ -180,7 +180,7 @@ class Ui_SearchPanel(object):
         self.toolButtonReplaceAll.setText(_("Replace All"))
         self.actionSearch.setText(_("Search"))
         self.actionSearch.setToolTip(_("Show the search panel"))
-        self.actionSearch.setShortcut(_("Ctrl+F"))
+        self.actionSearch.setShortcut(_("Ctrl+H"))
         self.actionActionSearchAndReplace.setText(_("Search and replace"))
         self.actionActionSearchAndReplace.setToolTip(_("Show the search and replace panel"))
         self.actionActionSearchAndReplace.setShortcut(_("Ctrl+R"))

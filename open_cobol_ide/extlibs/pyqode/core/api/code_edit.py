@@ -967,6 +967,24 @@ class CodeEdit(QtWidgets.QPlainTextEdit):
                                         QtCore.Qt.NoModifier)
                 super(CodeEdit, self).keyPressEvent(event)
 
+            # redefine ctrl-b to go to previous char
+            elif (event.key() == QtCore.Qt.Key_B) and \
+                 (event.modifiers() & QtCore.Qt.ControlModifier):
+                event = QtGui.QKeyEvent(QtCore.QEvent.KeyPress,
+                                        QtCore.Qt.Key_Left,
+                                        QtCore.Qt.NoModifier)
+                super(CodeEdit, self).keyPressEvent(event)
+
+
+            # redefine ctrl-f to go to next char
+            elif (event.key() == QtCore.Qt.Key_F) and \
+                 (event.modifiers() & QtCore.Qt.ControlModifier):
+                event = QtGui.QKeyEvent(QtCore.QEvent.KeyPress,
+                                        QtCore.Qt.Key_Right,
+                                        QtCore.Qt.NoModifier)
+                super(CodeEdit, self).keyPressEvent(event)
+
+
             # redefine ctrl-k to kill to end of line, but in a way
             # that saves the killed portion the copy buffer.
             elif (event.key() == QtCore.Qt.Key_K) and \
