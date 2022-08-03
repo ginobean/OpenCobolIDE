@@ -943,6 +943,13 @@ class CodeEdit(QtWidgets.QPlainTextEdit):
                     event.modifiers() == QtCore.Qt.NoModifier:
                 self.un_indent()
                 event.accept()
+
+            # redefine ctrl-a to go to beginning of line.
+            elif (event.key() == QtCore.Qt.Key_A) and \
+                 (event.modifiers() & QtCore.Qt.ControlModifier):
+                self._do_home_key()
+                event.accept()
+
             elif event.key() == QtCore.Qt.Key_Home and \
                     int(event.modifiers()) & QtCore.Qt.ControlModifier == 0:
                 self._do_home_key(
@@ -1140,9 +1147,10 @@ class CodeEdit(QtWidgets.QPlainTextEdit):
             action.setVisible(False)
             self.add_action(action, sub_menu=None)
             self.action_undo = action
+
             # Redo
             action = QtWidgets.QAction(_('Redo'), self)
-            action.setShortcut('Ctrl+Y')
+            # action.setShortcut('Ctrl+Y')
             action.setIcon(icons.icon(
                 'edit-redo', ':/pyqode-icons/rc/edit-redo.png', 'fa.repeat'))
             action.triggered.connect(self.redo)
@@ -1168,7 +1176,7 @@ class CodeEdit(QtWidgets.QPlainTextEdit):
             self.action_cut = action
             # paste
             action = QtWidgets.QAction(_('Paste'), self)
-            action.setShortcut(QtGui.QKeySequence.Paste)
+            action.setShortcuts([QtGui.QKeySequence.Paste, 'Ctrl+Y'])
             action.setIcon(icons.icon(
                 'edit-paste', ':/pyqode-icons/rc/edit-paste.png',
                 'fa.paste'))
@@ -1181,13 +1189,15 @@ class CodeEdit(QtWidgets.QPlainTextEdit):
         action.triggered.connect(self.duplicate_line)
         self.add_action(action, sub_menu=None)
         self.action_duplicate_line = action
+
         # select all
-        action = QtWidgets.QAction(_('Select all'), self)
-        action.setShortcut(QtGui.QKeySequence.SelectAll)
-        action.triggered.connect(self.selectAll)
-        self.action_select_all = action
-        self.add_action(self.action_select_all, sub_menu=None)
-        self.add_separator(sub_menu=None)
+        # action = QtWidgets.QAction(_('Select all'), self)
+        # action.setShortcut(QtGui.QKeySequence.SelectAll)
+        # action.triggered.connect(self.selectAll)
+        # self.action_select_all = action
+        # self.add_action(self.action_select_all, sub_menu=None)
+        # self.add_separator(sub_menu=None)
+
         if create_standard_actions:
             # indent
             action = QtWidgets.QAction(_('Indent'), self)
