@@ -535,7 +535,7 @@ class Ui_MainWindow(object):
         self.actionSave.setText(_translate("MainWindow", "&Save"))
         self.actionSave.setToolTip(_translate("MainWindow", "Save the current editor"))
         self.actionSave.setStatusTip(_translate("MainWindow", "Save the current editor"))
-        self.actionSave.setShortcut(_translate("MainWindow", "Ctrl+S"))
+        self.actionSave.setShortcut(_translate("MainWindow", "Alt+S"))
         self.actionSaveAs.setText(_translate("MainWindow", "Sa&ve as"))
         self.actionSaveAs.setToolTip(_translate("MainWindow", "Save the current editor as"))
         self.actionSaveAs.setStatusTip(_translate("MainWindow", "Save the current editor as"))

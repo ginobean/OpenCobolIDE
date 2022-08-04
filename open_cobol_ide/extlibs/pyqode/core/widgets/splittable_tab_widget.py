@@ -1100,7 +1100,7 @@ class DetachedEditorWindow(QtWidgets.QMainWindow):
         action = tb.addAction(QtGui.QIcon.fromTheme('document-save'),
                               _('Save'))
         action.triggered.connect(self._save)
-        action.setShortcut('Ctrl+S')
+        action.setShortcut('Alt+S')
         self.addToolBar(tb)
 
     def _save(self):

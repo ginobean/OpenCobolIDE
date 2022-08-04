@@ -158,7 +158,7 @@ class SearchAndReplacePanel(Panel, Ui_SearchPanel):
         icon = icons.icon('edit-find', ':/pyqode-icons/rc/edit-find.png',
                           'fa.search')
         self.actionSearch.setIcon(icon)
-        self.actionSearch.setShortcut('Ctrl+H')
+        self.actionSearch.setShortcut('Ctrl+S')
         self.labelSearch.setPixmap(icon.pixmap(icon_size))
 
         icon = icons.icon(
